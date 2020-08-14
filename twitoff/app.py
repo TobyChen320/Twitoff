@@ -7,6 +7,7 @@ from .predict import predict_user
 
 load_dotenv()
 
+
 def create_app():
     '''Create and configure an instance of the Flask application'''
 
