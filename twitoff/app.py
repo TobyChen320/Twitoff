@@ -62,5 +62,4 @@ def create_app():
         db.create_all()
         return render_template('base.html', title='Reset Database!', users=User.query.all())
 
-
     return app

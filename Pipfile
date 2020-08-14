@@ -17,6 +17,8 @@ basilica = "*"
 twitter-scraper = "*"
 gunicorn = "*"
 psycopg2 = "*"
+scikit-learn = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.7"
