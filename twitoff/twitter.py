@@ -89,10 +89,10 @@ def add_user_history(username):
         # Continue to collect tweets using max_id and update until 3200 tweet max
         while True:
             tweets = twitter_user.timeline(count=200,
-                                          exclude_replies=True,
-                                          include_rts=False,
-                                          tweet_mode='extended',
-                                          max_id=oldest_max_id)
+                                           exclude_replies=True,
+                                           include_rts=False,
+                                           tweet_mode='extended',
+                                           max_id=oldest_max_id)
             if len(tweets) == 0:
                 break
 
@@ -122,3 +122,9 @@ def add_user_history(username):
         # If no errors happend than commit the records
         db.session.commit()
         print('Successfully saved tweets to DB!')
+
+
+def update_all_users():
+    '''Update all tweets for all Users in the User table'''
+    for user in User.query.all():
+        add_user_tweepy()
